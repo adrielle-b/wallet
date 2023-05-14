@@ -1,4 +1,4 @@
-import { FETCH_SUCESS } from '../actions';
+import { REQUEST_CURRENCIES, SAVE_WALLET } from '../actions';
 
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 const INITIAL_STATE_WALLET = {
@@ -10,11 +10,19 @@ const INITIAL_STATE_WALLET = {
 
 const walletReducer = (state = INITIAL_STATE_WALLET, action) => {
   switch (action.type) {
-  case FETCH_SUCESS:
+  case REQUEST_CURRENCIES:
     return {
       ...state,
       currencies: action.payload,
     };
+
+  case SAVE_WALLET:
+    return {
+      ...state,
+      expenses: [...state.expenses, action.payload],
+      total: action.total,
+    };
+
   default:
     return state;
   }
