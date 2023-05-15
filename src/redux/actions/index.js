@@ -3,6 +3,7 @@ export const SAVE_LOGIN = 'SAVE_LOGIN';
 export const SAVE_WALLET = 'SAVE_WALLET';
 export const REQUEST_CURRENCIES = 'REQUEST_CURRENCIES';
 export const REQUEST_EXCHANGE = 'REQUEST_EXCHANGE';
+export const EXCLUIR_EXPENSE = 'EXCLUIR_EXPENSE';
 
 export const saveLogin = (login) => ({
   type: SAVE_LOGIN,
@@ -19,6 +20,11 @@ export const requestCurrencies = (currencies) => ({
   payload: currencies,
 }
 );
+
+export const excluirExpense = (walletAtual) => ({
+  type: EXCLUIR_EXPENSE,
+  payload: walletAtual,
+});
 
 export const fetchCurrencies = () => async (dispatch) => {
   try {

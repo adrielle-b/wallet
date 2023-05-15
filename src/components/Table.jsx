@@ -1,8 +1,16 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { excluirExpense } from '../redux/actions';
 
 class Table extends Component {
+  handleClickExcluir = ({ target }) => {
+    const { id } = target;
+    const { expenses, dispatch } = this.props;
+    const listAtual = expenses.filter((expense) => Number(expense.id) !== Number(id));
+    dispatch(excluirExpense(listAtual));
+  };
+
   render() {
     const { expenses } = this.props;
 
@@ -45,7 +53,15 @@ class Table extends Component {
                 <td>Real</td>
                 <td>
                   <button>Editar</button>
-                  <button>Excluir</button>
+                  <button
+                    data-testid="delete-btn"
+                    id={ id }
+                    onClick={ (event) => this.handleClickExcluir(event) }
+                    type="button"
+                  >
+                    Excluir
+
+                  </button>
                 </td>
               </tr>
             );
@@ -57,6 +73,7 @@ class Table extends Component {
 }
 
 Table.propTypes = {
+  dispatch: PropTypes.func.isRequired,
   expenses: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
