@@ -1,4 +1,8 @@
-import { EXCLUIR_EXPENSE, REQUEST_CURRENCIES, SAVE_WALLET } from '../actions';
+import { EXCLUIR_EXPENSE,
+  HABILITA_EDIT,
+  REQUEST_CURRENCIES,
+  SAVE_EDIT,
+  SAVE_WALLET } from '../actions';
 
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 const INITIAL_STATE_WALLET = {
@@ -25,6 +29,20 @@ const walletReducer = (state = INITIAL_STATE_WALLET, action) => {
   case EXCLUIR_EXPENSE:
     return {
       ...state,
+      expenses: [...action.payload],
+    };
+
+  case HABILITA_EDIT:
+    return {
+      ...state,
+      editor: true,
+      idToEdit: action.payload,
+    };
+
+  case SAVE_EDIT:
+    return {
+      ...state,
+      editor: false,
       expenses: [...action.payload],
     };
 
