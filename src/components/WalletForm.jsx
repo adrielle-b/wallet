@@ -60,7 +60,6 @@ class WalletForm extends Component {
     const { value, description, currency, method, tag } = this.state;
     const expenseEdit = expenses
       .find((expense) => Number(expense.id) === Number(idToEdit));
-    // console.log('edit:', expenseEdit);
 
     const expense = {
       id: Number(idToEdit),
@@ -77,7 +76,6 @@ class WalletForm extends Component {
 
     dispatch(saveEdit(listAtual));
     this.clearState();
-    // console.log('listaEditada:', listAtual);
 
     this.setState(() => ({
       id: expenses[expenses.length - 1].id + 1,
