@@ -1,10 +1,10 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+<div align="center">
+
+# Projeto Wallet Trybe
+
+Esse é um projeto de carteira digital que registra despesas em outras moedas e os valores são convertidos e totalizados em real.
+Foi desenvolvido funcionalidades de editar e excluir qualquer despesa listada na tabela.
+Para contrução, usei a api de cotações e pratiquei conhecimentos em React js, Routes, Redux, Testes e CSS.
+
+![image](tela_login.png)
+![image](tela_wallet.png)
