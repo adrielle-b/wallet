@@ -1,0 +1,31 @@
+.conteudo {
+  display: flex;
+  width: 100%;
+}
+
+.form-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 20%;
+}
+
+.form-expense {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 10px 20px;
+  padding-bottom: 35px;
+  width: auto;
+}
+
+select {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.title-form {
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}

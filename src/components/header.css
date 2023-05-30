@@ -1,0 +1,62 @@
+.header {
+  align-items: center;
+  background-color: #7400b8;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-left: 30px;
+}
+
+.title-carteira {
+  color: white;
+  font-family: Sofia , cursive;
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.icon-carteira {
+  align-items: center;
+  color: white;
+  font-size: 35px;
+  margin-left: 6px;
+  margin-top: 12px;
+}
+
+
+.user , .total {
+  display: flex;
+  justify-content: center;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  margin-right: 8px;
+  margin-top: 8px;
+}
+
+h2 , p {
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  margin-right: 8px;
+  text-align: center;
+}
+
+.icon-user {
+  background-color: #b298dc;
+  border-radius: 50%;
+  color: #7400b8;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  margin-right: 5px;
+  padding: 6px;
+  width: 24px;
+}

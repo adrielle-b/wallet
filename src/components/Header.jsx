@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
+import './header.css';
+import { FaUser } from 'react-icons/fa';
+import { TbReportMoney } from 'react-icons/tb';
 
 class Header extends Component {
   render() {
@@ -14,10 +17,24 @@ class Header extends Component {
     });
     const total = totalConverted.toFixed(2);
     return (
-      <div>
-        <h2 data-testid="email-field">{email}</h2>
-        <p data-testid="total-field">{total}</p>
-        <p data-testid="header-currency-field">BRL</p>
+      <div className="header">
+
+        <section className="logo">
+          <h1 className="title-carteira">Wallet</h1>
+          <div className="icon-carteira"><TbReportMoney /></div>
+        </section>
+
+        <section className="infos">
+          <div className="user">
+            <div className="icon-user"><FaUser /></div>
+            <h2 data-testid="email-field">{email}</h2>
+          </div>
+          <div className="total">
+            <p>Total:</p>
+            <p data-testid="total-field">{total}</p>
+            <p data-testid="header-currency-field">BRL</p>
+          </div>
+        </section>
       </div>
     );
   }

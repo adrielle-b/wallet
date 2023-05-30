@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { AiOutlineEdit } from 'react-icons/ai';
+import { BsTrash } from 'react-icons/bs';
 import { connect } from 'react-redux';
 import { excluirExpense, habilitaEdit } from '../redux/actions';
+import './table.css';
 
 class Table extends Component {
-  handleClickExcluir = ({ target }) => {
-    const { id } = target;
+  handleClickExcluir = (event) => {
+    const { id } = event.target;
     const { expenses, dispatch } = this.props;
     const listAtual = expenses.filter((expense) => Number(expense.id) !== Number(id));
     dispatch(excluirExpense(listAtual));
@@ -48,7 +51,7 @@ class Table extends Component {
             const exchangeRate = exchangeRates[currency];
 
             return (
-              <tr key={ id }>
+              <tr key={ id } className="expense">
                 <td>{description}</td>
                 <td>{tag}</td>
                 <td>{method}</td>
@@ -58,24 +61,28 @@ class Table extends Component {
                 <td>{(Number(value) * Number(exchangeRate.ask)).toFixed(2)}</td>
                 <td>Real</td>
                 <td>
-                  <button
-                    data-testid="edit-btn"
-                    type="button"
-                    id={ id }
-                    onClick={ (event) => this.handleClickEditar(event) }
-                  >
-                    Editar
+                  <div className="buttons">
+                    <button
+                      className="button-table"
+                      data-testid="edit-btn"
+                      type="button"
+                      id={ id }
+                      onClick={ (event) => this.handleClickEditar(event) }
+                    >
+                      <AiOutlineEdit />
 
-                  </button>
-                  <button
-                    data-testid="delete-btn"
-                    id={ id }
-                    onClick={ (event) => this.handleClickExcluir(event) }
-                    type="button"
-                  >
-                    Excluir
+                    </button>
+                    <button
+                      className="button-table"
+                      data-testid="delete-btn"
+                      id={ id }
+                      onClick={ (event) => this.handleClickExcluir(event) }
+                      type="button"
+                    >
+                      <BsTrash />
 
-                  </button>
+                    </button>
+                  </div>
                 </td>
               </tr>
             );

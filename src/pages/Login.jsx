@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { saveLogin } from '../redux/actions';
+import './login.css';
 
 class Login extends React.Component {
   state = {
@@ -35,36 +36,43 @@ class Login extends React.Component {
     const { email, senha, disabled } = this.state;
 
     return (
-      <div>
-        <label htmlFor="email">
-          Email:
-          <input
-            type="text"
-            id="email"
-            name="email"
-            value={ email }
-            data-testid="email-input"
-            onChange={ this.handleChange }
-          />
-        </label>
-        <label htmlFor="senha">
-          Senha:
-          <input
-            type="password"
-            id="senha"
-            name="senha"
-            value={ senha }
-            data-testid="password-input"
-            onChange={ this.handleChange }
-          />
-        </label>
-        <button
-          disabled={ disabled }
-          onClick={ this.handleSubmit }
-        >
-          Entrar
-        </button>
-      </div>
+      <main>
+        <form>
+          <div className="container-title">
+            <h1 className="login-title">Wallet</h1>
+            <p className="login">Sign in</p>
+          </div>
+          <label htmlFor="email">
+            Email:
+            <input
+              type="text"
+              id="email"
+              name="email"
+              value={ email }
+              data-testid="email-input"
+              onChange={ this.handleChange }
+            />
+          </label>
+          <label htmlFor="senha">
+            Senha:
+            <input
+              type="password"
+              id="senha"
+              name="senha"
+              value={ senha }
+              data-testid="password-input"
+              onChange={ this.handleChange }
+            />
+          </label>
+          <button
+            disabled={ disabled }
+            onClick={ this.handleSubmit }
+          >
+            Entrar
+          </button>
+        </form>
+      </main>
+
     );
   }
 }
@@ -72,7 +80,7 @@ class Login extends React.Component {
 Login.propTypes = {
   dispatch: PropTypes.func.isRequired,
   history: PropTypes.shape({
-    push: PropTypes.func,
+    push: PropTypes.func.isRequired,
   }).isRequired,
 };
 
